@@ -10,7 +10,7 @@
     "test:report": "nyc report --reporter=text-lcov > coverage.lcov && codeclimate-test-reporter < coverage.lcov",
     "clean": "rm -rf build",
     "build": "babel src -d build",
-    "build:clean": "npm run clea && npm run build"
+    "build:production": "npm run clean && npm run build"
   },
   "repository": {
     "type": "git",
