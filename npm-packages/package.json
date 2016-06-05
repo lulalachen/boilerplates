@@ -4,9 +4,9 @@
   "description": "Algorithm tools in Javascripts",
   "main": "lib/index.js",
   "scripts": {
-    "test": "mocha --timeout 5000 --compilers js:babel-register test/*.test.js",
-    "test:coverage": "nyc npm run test && nyc report --reporter=text-lcov > coverage.lcov",
-    "coverage": "codeclimate-test-reporter < coverage.lcov",
+    "test": "mocha --compilers js:babel-register test/*.test.js",
+    "test:coverage": "nyc npm run test",
+    "test:report": "nyc report --reporter=text-lcov > coverage.lcov && codeclimate-test-reporter < coverage.lcov",
     "clean": "rm -rf lib",
     "build": "babel src -d lib",
     "build:production": "npm run clean && npm run build"
