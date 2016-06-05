@@ -1,0 +1,1 @@
+export moduleFunction from './moduleFunction'
