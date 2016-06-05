@@ -3,7 +3,9 @@ var router = Router()
 
 router.get('/', (req, res) => {
   const { name = 'luhaha' } = req.query
-  res.send(`Hello, ${name}`)
+  res.status(200).send({
+    message: `Hello, ${name}`
+  })
 })
 
 export default router

@@ -1,3 +1,3 @@
 require('babel-polyfill')
-var fetch = require('isomorphic-fetch')
-global.fetch = fetch
+require('./src/server.js')
+global.fetch = require('isomorphic-fetch')
