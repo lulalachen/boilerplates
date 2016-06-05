@@ -1,0 +1,17 @@
+language: node_js
+node_js:
+- 5.1.0
+script:
+- npm run test:coverage
+- npm run build:production
+deploy:
+  provider: npm
+  email: "lulalachen@gmail.com"
+  api_key:
+    secure: kDxN94p5+OwULIGHzhE8X13z5gjk8T+xmg1gTaIV+3k4nw/AIyrbVAL3hGDsd2yAFOuOZ5+pYvoZtaRpPcq/2J33tKrMaDR5IWjyCnEQch/qEcejqxNxbhrRpMifd8SZvJGbD2HZqGV5jqOhQGf3/QipGAjicFASG0T5wt8i/Lsy2jiYh5sgVUjR/a8vl6suIEf+VjBftWR+yFz7VgzDtxr660RBh1Q1xsDcUAfyXYXrkWLH9U35JoTCWTabnJWJHdyvtocRxQQePqFQccdQ/kValgw6fsOus9wh0eY83jZ9a5xoXK6Xcn1RN9N36rdMgl7EI44ka9WYl+R6rE/8laaneK8TZicpRRevhfk2KB+pXvZweWDvAcpDtwnTNyRbXwq2CJ7rRszZg6UKxWXXf6SG+K0iIhTzCz/Xawcws4/ZUOzY0QLt5fYimILM8gtBCRdqq5XMyBU6anLnIIP85Kzg7zSZSbl4jwfjlqUEOZnYamOqpxi2k8/cSco5KV8dy5GR+6XA96PMmmMzeluROU3agtftevazBWVAKHcSpiD6kRxrIg7ZRjv3MVi2zNZ9eqXwCfqAyed5ZQH+fRpDOI0sKMJfqIGWNH5L5wtCeozE9WpRGrkujefPjJoUUadXpRvwOYu1fbcpZzt/BFPR+bJUJuPsneRiO+uAhF9lN1I=
+  on:
+    branch: master
+  skip_cleanup: true
+after_success:
+  - npm run coverage
+  - rm coverage.lcov
