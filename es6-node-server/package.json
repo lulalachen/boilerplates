@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon --exec babel-node -- src/server.js",
     "test": "mocha -r setupTest.js --compilers js:babel-register src/**/*.test.js",
-    "test:coverage": "nyc npm run test",
+    "test:coverage": "nyc npm run test || true",
     "test:report": "nyc report --reporter=text-lcov > coverage.lcov && codeclimate-test-reporter < coverage.lcov",
     "clean": "rm -rf build",
     "build": "babel src -d build",

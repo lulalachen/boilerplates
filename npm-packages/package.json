@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "scripts": {
     "test": "mocha --compilers js:babel-register test/*.test.js",
-    "test:coverage": "nyc npm run test",
+    "test:coverage": "nyc npm run test || true",
     "test:report": "nyc report --reporter=text-lcov > coverage.lcov && codeclimate-test-reporter < coverage.lcov",
     "clean": "rm -rf lib",
     "build": "babel src -d lib",
