@@ -4,7 +4,7 @@
   "description": "Algorithm tools in Javascripts",
   "main": "lib/index.js",
   "scripts": {
-    "test": "mocha --compilers js:babel-register test/*.test.js || true",
+    "test": "mocha --compilers js:babel-register test/*.test.js",
     "test:coverage": "nyc npm run test",
     "test:report": "nyc report --reporter=text-lcov > coverage.lcov && codeclimate-test-reporter < coverage.lcov",
     "clean": "rm -rf lib",
